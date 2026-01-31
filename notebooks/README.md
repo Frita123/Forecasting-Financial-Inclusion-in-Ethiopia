@@ -39,6 +39,13 @@ Impact direction and lag assumptions
 
 📦 Output
 
+### Enrichment Rationale
+- Telebirr and M-Pesa user counts were added to capture usage dynamics
+  not present in survey-only data.
+- Impact links encode hypothesized causal relationships for modeling,
+  not confirmed causality.
+- Events provide temporal anchors for interpreting trend shifts.
+
 Enriched dataset:
 
 data/processed/ethiopia_fi_unified_data_enriched.csv
@@ -93,13 +100,3 @@ Access appears more policy-constrained than demand-constrained
 📌 Key Output
 
 Insight-driven visualizations and tables supporting hypotheses for impact modeling
-
-🧪 Tools & Technologies
-
-Python
-
-pandas, numpy
-
-matplotlib
-
-Jupyter Notebook
