@@ -1,102 +1,154 @@
-📊 Forecasting Financial Inclusion in Ethiopia
+📒 Notebooks Documentation
 
-Task 1 & Task 2 Documentation
+Financial Inclusion Analysis – Ethiopia
 
-📌 Project Overview
+This folder contains all Jupyter notebooks used for data preparation, exploratory analysis, and forecasting in the Financial Inclusion project.
+Each notebook corresponds to a specific task and builds logically on the previous one.
 
-This project analyzes the evolution and drivers of financial inclusion in Ethiopia, with a focus on Access, Usage, and enabling infrastructure. The work is structured in sequential tasks to support exploratory analysis, causal reasoning, and future impact modeling.
+📘 task1_data_preparation.ipynb
 
-Task 1 focuses on data integration, cleaning, and enrichment.
+Task 1: Data Collection & Cleaning
 
-Task 2 performs exploratory data analysis (EDA) and insight generation.
+Purpose
 
-✅ Task 1: Data Integration & Enrichment
-🎯 Objective
+Prepare raw financial inclusion datasets for analysis and modeling.
 
-To create a unified, analysis-ready dataset by integrating multiple financial inclusion data sources and enriching them with structural metadata.
+Key Steps
 
-🔧 Key Steps
+Load raw datasets (account ownership, digital payments)
 
-Loaded and standardized raw datasets from surveys, operator reports, and policy sources
+Standardize column names and formats
 
-Harmonized indicator names, units, and time formats
+Convert fiscal year labels (e.g., FY2022/23 → 2022)
 
-Classified records into:
+Handle missing values and type conversions
 
-Observations
+Merge datasets into a unified structure
 
-Events
+Output
 
-Impact links
+Cleaned dataset saved to:
 
-Enriched data with:
+data/processed/ethiopia_fi_unified_data.csv
 
-Financial inclusion pillars (Access, Usage, Infrastructure)
+Why It Matters
 
-Confidence levels
+Ensures consistency and reproducibility for all downstream analysis and forecasting.
 
-Impact direction and lag assumptions
+📊 task2_eda_events.ipynb
 
-📦 Output
+Task 2: Exploratory Data Analysis & Event Impact
 
-### Enrichment Rationale
-- Telebirr and M-Pesa user counts were added to capture usage dynamics
-  not present in survey-only data.
-- Impact links encode hypothesized causal relationships for modeling,
-  not confirmed causality.
-- Events provide temporal anchors for interpreting trend shifts.
+Purpose
 
-Enriched dataset:
+Explore historical trends and understand how major events influenced financial inclusion.
 
-data/processed/ethiopia_fi_unified_data_enriched.csv
+Key Steps
 
-✔ Key Outcome
+Time-series visualization of key indicators
 
-A clean, structured dataset enabling:
+Event annotation (policy reforms, mobile money expansion, telecom competition)
 
-Time-series analysis
+Growth rate analysis
 
-Cross-pillar comparison
+Indicator correlation analysis
 
-Future causal and forecasting models
+Insights Generated
 
-📈 Task 2: Exploratory Data Analysis & Insights
-🎯 Objective
+Digital payment usage is growing faster than account ownership
 
-To analyze patterns, trends, and constraints in financial inclusion across time and population segments in Ethiopia.
+Policy and telecom-related events coincide with acceleration periods
 
-🔍 Analyses Performed
+Outputs
 
-Dataset composition and temporal coverage
+Analytical plots
 
-Data quality and confidence assessment
+Summary statistics
 
-Access analysis (Account ownership trends & growth rates)
+Event–indicator relationships
 
-Gender gap analysis
+🔮 task3_forecasting.ipynb
 
-Usage analysis (Telebirr, M-Pesa adoption)
+Task 3: Baseline Forecasting
 
-Registered vs active account usage
+Purpose
 
-Infrastructure enablers (smartphones, 4G coverage)
+Forecast financial inclusion indicators using historical trends.
 
-Event overlay analysis (policy & market milestones)
+Key Steps
 
-Correlation analysis between indicators
+Define forecasting targets:
 
-🧠 Key Insights
+Account ownership (%)
 
-Mobile money strongly increases usage, but not formal account ownership
+Digital payment usage (%)
 
-Account ownership growth slowed despite rapid digital wallet adoption
+Apply trend-based regression models
 
-Persistent gender gap in financial access
+Generate baseline forecasts for 2025–2027
 
-Infrastructure lags constrain active and deep usage
+Evaluate model assumptions and limitations
 
-Access appears more policy-constrained than demand-constrained
+Outputs
 
-📌 Key Output
+Forecast tables
 
-Insight-driven visualizations and tables supporting hypotheses for impact modeling
+Baseline projection plots
+
+Saved forecast results for dashboard use
+
+📈 task4_forecasting_scenarios.ipynb (if applicable)
+
+Task 4: Scenario & Uncertainty Analysis
+
+Purpose
+
+Extend baseline forecasts with scenario-based adjustments and uncertainty ranges.
+
+Key Steps
+
+Define scenarios:
+
+Optimistic
+
+Base
+
+Pessimistic
+
+Incorporate event-driven impact multipliers
+
+Generate scenario ranges and confidence intervals
+
+Compare trajectories across scenarios
+
+Outputs
+
+Scenario forecast tables
+
+Visualization of uncertainty bands
+
+Written interpretation of risks and assumptions
+
+Run notebooks in order:
+
+task1 → task2 → task3 → task4
+
+⚠️ Notes & Assumptions
+
+Data availability is limited (sparse Findex points)
+
+Forecasts are trend-based, not causal
+
+Scenario analysis reflects assumptions, not predictions
+
+Results are intended for strategic insight, not exact estimation
+
+✅ Best Practice
+
+✔ Run notebooks sequentially
+✔ Do not skip Task 1 (required for all others)
+✔ Outputs from forecasting notebooks feed directly into the dashboard
+
+📌 Summary
+
+The notebooks in this folder provide the analytical backbone of the project, moving from raw data to insights and forecasts in a clear, reproducible workflow.
